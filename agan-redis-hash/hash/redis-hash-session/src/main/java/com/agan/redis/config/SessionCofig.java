@@ -20,7 +20,7 @@ public class SessionCofig implements WebMvcConfigurer {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(new SecurityInterceptor())
-                //排查拦截的2个路径
+                //排除拦截的2个路径
                 .excludePathPatterns("/user/login")
                 .excludePathPatterns("/user/logout")
 

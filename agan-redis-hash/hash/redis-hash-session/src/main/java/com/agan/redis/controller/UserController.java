@@ -17,10 +17,10 @@ public class UserController {
 
     public UserController() {
         //初始化2个用户，用于模拟登录
-        User u1=new User(1,"agan1","agan1");
-        userMap.put("agan1",u1);
-        User u2=new User(2,"agan2","agan2");
-        userMap.put("agan2",u2);
+        User u1=new User(1,"user1","user1");
+        userMap.put("user1",u1);
+        User u2=new User(2,"user2","user2");
+        userMap.put("user2",u2);
     }
 
     @GetMapping(value = "/login")

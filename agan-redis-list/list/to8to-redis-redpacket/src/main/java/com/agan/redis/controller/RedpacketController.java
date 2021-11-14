@@ -1,6 +1,7 @@
 package com.agan.redis.controller;
 
 import com.sun.org.apache.bcel.internal.generic.IF_ACMPEQ;
+import com.sun.xml.internal.bind.Util;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -105,6 +106,13 @@ public class RedpacketController {
             use = use + array[i];
         }
         return array;
+    }
+
+
+    public static void main(String[] args) {
+        RedpacketController controller = new RedpacketController();
+        Integer[] integers = controller.splitRedPacket(1000, 10);
+        System.out.println(integers.toString());
     }
 
 }

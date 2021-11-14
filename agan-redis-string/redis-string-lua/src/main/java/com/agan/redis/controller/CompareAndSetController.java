@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
 /**
  * @author 阿甘
@@ -32,6 +33,8 @@ public class CompareAndSetController {
 
     /**
      * 修改用户名称
+     * @param uid 用户id
+     * @param uname 用户名称
      */
     @GetMapping(value = "/updateuser")
     public void updateUser(Integer uid,String uname) {

@@ -25,4 +25,15 @@ public class SynchronizedController {
 
     }
 
+    public static void main(String[] args) {
+        SynchronizedDemo synchronizedDemo=new SynchronizedDemo();
+        for (int i = 0; i < 3; i++) {
+            int finalI = i;
+            new Thread(()->{
+                log.info("-------用户{}开始下单--------", finalI);
+                synchronizedDemo.operation();
+            }).start();
+        }
+    }
+
 }

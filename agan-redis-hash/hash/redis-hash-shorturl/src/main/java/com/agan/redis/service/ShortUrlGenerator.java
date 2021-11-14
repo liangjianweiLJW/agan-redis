@@ -33,7 +33,7 @@ public class ShortUrlGenerator {
         for (int i = 0; i < 4; i++) {
             //取出8位字符串，md5 32位，被切割为4组，每组8个字符
             String sTempSubString = hex.substring(i * 8, i * 8 + 8);
-
+            // 这里需要使用 long 型来转换，因为 Inteper .parseInt() 只能处理 31 位 , 首位为符号位 , 如果不用 long ，则会越界
             //先转换为16进账，然后用0x3FFFFFFF进行位与运算，目的是格式化截取前30位
             long lHexLong = 0x3FFFFFFF & Long.parseLong(sTempSubString, 16);
 
@@ -54,6 +54,7 @@ public class ShortUrlGenerator {
         }
         return resUrl;
     }
+
 
     public static void main(String[] args) {
         // 长连接

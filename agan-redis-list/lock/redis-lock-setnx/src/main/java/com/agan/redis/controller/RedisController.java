@@ -59,4 +59,14 @@ public class RedisController {
         }
     }
 
+    public static void main(String[] args) {
+        String md5 = DigestUtils.md5DigestAsHex("ljw".getBytes()).toUpperCase();
+        String md1 = DigestUtils.md5DigestAsHex("ljw".getBytes()).toUpperCase();
+        String md2 = DigestUtils.md5DigestAsHex(" ljw".getBytes()).toUpperCase();
+        System.out.println(md5);
+        System.out.println(md1);
+        System.out.println(md2);
+
+    }
+
 }
