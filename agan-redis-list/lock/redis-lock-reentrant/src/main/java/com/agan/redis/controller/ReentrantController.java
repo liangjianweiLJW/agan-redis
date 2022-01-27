@@ -27,4 +27,16 @@ public class ReentrantController {
         log.info("--------请求{}结束--------",key);
     }
 
+
+    public static void main(String[] args) {
+        ReentrantLockDemo reentrantLockDemo=new ReentrantLockDemo();
+        for (int i = 0; i < 3; i++) {
+            int finalI = i;
+            new Thread(()->{
+                log.info("-------用户{}开始下单--------", finalI);
+                reentrantLockDemo.doSomething(1);
+            }).start();
+        }
+    }
+
 }
